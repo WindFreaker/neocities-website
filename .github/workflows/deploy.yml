@@ -4,7 +4,7 @@ name: Deploy to Neocities
 on:
   push:
     branches:
-      - main
+      - live
 
 # Prevents concurrent deployments doing strange things.
 concurrency:
