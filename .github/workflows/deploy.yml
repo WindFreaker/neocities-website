@@ -1,0 +1,29 @@
+name: Deploy to Neocities
+
+# Runs when deploying to the main branch.
+on:
+  push:
+    branches:
+      - main
+
+# Prevents concurrent deployments doing strange things.
+concurrency:
+  group: deploy-to-neocities
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v4
+
+    - name: Deploy to Neocities
+      uses: bcomnes/deploy-to-neocities@v3
+      with:
+        api_key: $
+        cleanup: true
+        neocities_supporter: false
+        preview_before_deploy: true
+        dist_dir: public
