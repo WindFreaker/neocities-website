@@ -3,6 +3,8 @@ name: Deploy to Neocities
 # Runs when deploying to the main branch.
 on:
   push:
+    paths:
+      - 'src/**'
     branches:
       - live
 
