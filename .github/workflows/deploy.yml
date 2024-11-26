@@ -1,12 +1,13 @@
 name: Deploy to Neocities
 
-# Runs when deploying to the main branch.
+# Runs when deploying to the main (live) branch.
 on:
   push:
-    paths:
-      - 'src/**'
     branches:
       - live
+    # Only runs if there are changes to the website files.
+    paths:
+      - 'src/**'
 
 # Prevents concurrent deployments doing strange things.
 concurrency:
